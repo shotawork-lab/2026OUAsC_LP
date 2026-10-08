@@ -1,0 +1,233 @@
+body {
+    color: #fff;
+    background-image: url(../images/header-kv-4.jpg);
+}
+
+/* header */
+
+.header {
+    position: relative;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+
+    animation: background-change 18s infinite;
+}
+
+.header > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes background-change {
+
+    0% {
+        background-image: url("../images/header-kv-1.jpg");
+    }
+
+    33% {
+        background-image: url("../images/header-kv-2.jpg");
+    }
+
+    66% {
+        background-image: url("../images/header-kv-3.jpg");
+    }
+
+    100% {
+        background-image: url("../images/header-kv-1.jpg");
+    }
+}
+
+.header-logo {
+    width: 30%;
+    object-fit: cover;
+}
+
+.header-content {
+    padding: 10%;
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.header-ttl {
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.header-ttl::before {
+    content: "大阪大学天文同好会";
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    bottom: 100%;
+}
+
+.header-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 20px 5%;
+    margin-top: 10px;
+    background-color: #00000070;
+    border-radius: 10px;
+}
+
+.header-nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.current {
+    color: skyblue;
+}
+
+.header-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+.header-nav-link:hover::after {
+    width: 100%;
+}
+
+.header-nav-item {
+    width: 20%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #00000090;
+}
+
+
+.icon {
+    display: block;
+    justify-content: right;
+}
+
+/* main */
+section {
+    padding-top: 40px;
+}
+
+.main {
+    margin: 30px 5%;
+    padding: 30px 5%;
+    background-color: #00000070;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 1000;
+    position: relative;
+    font-size: 70px;
+    font-style: normal;
+}
+
+.section-ttl::before {
+    content: "";
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    bottom: 80%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.section-ttl.__home::before {
+    content: "──ご案内──";
+}
+
+.section-ttl.__info::before {
+    content: "──お知らせ──";
+}
+
+.section-ttl.__about::before {
+    content: "──プラネタリウムについて──";
+}
+
+.section-ttl.__schedule::before {
+    content: "──上映スケジュール──";
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #000;
+    justify-content: center;
+}
+
+.footer-logo {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.footer-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    padding: 30px 20%;
+    margin-top: 10px;
+    background-color: #00000070;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.footer-nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.current {
+    color: skyblue;
+}
+
+.footer-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+.footer-nav-link:hover::after {
+    width: 100%;
+}
+
+.footer-nav-item {
+    width: 20%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #00000090;
+}
+
+.footer-copy {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
