@@ -1,6 +1,11 @@
 body {
     color: #fff;
-    background-image: url(../images/header-kv-4.jpg);
+    background-image: url(../images/main-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
 }
 
 /* header */
@@ -125,30 +130,46 @@ body {
 }
 
 /* main */
-section {
-    padding-top: 40px;
+section + section {
+    margin-top: 40px;
 }
 
 .main {
-    margin: 30px 5%;
+    margin: 20px 5%;
     padding: 30px 5%;
-    background-color: #00000070;
+    background-color: #00000080;
+}
+
+.update {
+    text-align: center;
+    color: #FFFF00;
+    border: 1px solid #FFFF00;
 }
 
 h2 {
     text-align: center;
     font-weight: 1000;
     position: relative;
-    font-size: 70px;
+    font-size: 50px;
     font-style: normal;
+    padding-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .section-ttl::before {
     content: "";
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
     left: 50%;
-    bottom: 80%;
+    bottom: 90%;
     transform: translateX(-50%);
     white-space: nowrap;
 }
@@ -169,6 +190,91 @@ h2 {
     content: "──上映スケジュール──";
 }
 
+/* info */
+.info-list {
+    margin-top: 20px;
+}
+
+.info-list .__detail {
+    margin-top: 0;
+}
+
+.info-item {
+    border-bottom: 1px solid #BCBCBC;
+}
+
+.info-item + .info-item {
+    margin-top: 40px;
+}
+
+.info-tag {
+    font-size: 12px;
+    margin-left: 24px;
+    padding: 4px 8px;
+}
+
+.info-tag.__orange {
+    border: 1px solid #FF9F51;
+    color: #FF9F51;
+}
+
+.info-tag.__red {
+    border: 1px solid #BA0000;
+    color: #BA0000;
+}
+
+.info-txt {
+    margin-top: 16px;
+    padding-bottom: 16px;
+}
+
+.info-detail {
+    padding-left: 20px;
+}
+
+
+/* schedule */
+
+.schedule-content {
+    margin-top: 30px;
+}
+
+.schedule-table {
+    line-height: 40px;
+    display: flex;
+}
+
+.schedule-row {
+    justify-content: space-between;
+    text-align: center;
+    gap: 30px;
+}
+
+.schedule-state::after {
+    content: "";
+    border-radius: 5px;
+}
+
+.schedule-state.adjusted::after {
+    content: "調整中";
+    border: 3px solid #D97706;
+    background-color: #D9770660;
+}
+.schedule-state.applying::after {
+    content: "受付中";
+    border: 3px solid #15803D;
+    background-color: #15803D60;
+}
+.schedule-state.applied::after {
+    content: "受付終了";
+    border: 3px solid #B91C1C;
+    background-color: #B91C1C60;
+}
+.schedule-state.finished::after {
+    content: "上映済み";
+    border: 3px solid #64748B;
+    background-color: #64748B60;
+}
 
 /* footer */
 
