@@ -24,7 +24,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
 }
 
 /* header */
@@ -33,7 +32,7 @@ body {
     position: relative;
     background-size: cover;
     margin: 0 auto;
-    padding: 40px 0 20px 0;
+    padding: 30px 10% 10px 10%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -80,7 +79,6 @@ body {
 }
 
 .header-content {
-    padding: 10%;
     display: flex;
     gap: 20px;
     align-items: end;
@@ -142,11 +140,62 @@ body {
     background-color: #00000090;
 }
 
-
 .icon {
     display: block;
     justify-content: right;
 }
+
+@media (max-width: 767px) {
+    .header {
+        display: flex;
+        padding: 20px 5% 10px 5%;
+    }
+
+    .header-logo {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .header-content {
+        display: block;
+    }
+
+    .header-ttl {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+
+    .header-ttl::before {
+        font-size: 12px;
+        bottom: 90%;
+    }
+
+    .header-nav {
+        width: 50%;
+    }
+
+    .header-nav-list {
+        display: block;
+        padding: 10px 5%;
+        border-radius: 10px;
+    }
+
+    .header-nav-link:hover::after {
+        width: 100%;
+    }
+
+    .header-nav-item {
+        width: 80%;
+        margin: 5px 0;
+        left: 50%;
+        justify-content: center;
+    }
+
+    .icon-list {
+        display: flex;
+    }
+}
+
 
 /* main */
 section + section {
@@ -171,7 +220,6 @@ h2 {
     position: relative;
     font-size: 50px;
     font-style: normal;
-    padding-bottom: 20px;
 }
 
 h3 {
@@ -209,13 +257,40 @@ h3 {
     content: "──上映スケジュール──";
 }
 
+.btn {
+    display: block;
+    border: 1px solid #CCC;
+    width: 160px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px 0;
+}
+
+@media (max-width: 767px) {
+    section + section {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-weight: 750;
+        font-size: 30px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .section-ttl::before {
+        font-size: 18px;
+        bottom: 75%;
+    }
+}
+
 /* info */
 .info-list {
     margin-top: 20px;
-}
-
-.info-list .__detail {
-    margin-top: 0;
 }
 
 .info-item {
@@ -243,8 +318,7 @@ h3 {
 }
 
 .info-txt {
-    margin-top: 16px;
-    padding-bottom: 16px;
+    margin: 16px 0;
 }
 
 .info-detail {
@@ -260,44 +334,68 @@ h3 {
 
 .schedule-table {
     line-height: 40px;
-    display: flex;
+    border-spacing: 20px 0;
 }
 
 .schedule-row {
-    justify-content: space-between;
     text-align: center;
-    gap: 30px;
 }
 
 .schedule-state::after {
     content: "";
+    display: inline-block;
+    width: 90px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
     border-radius: 5px;
 }
 
 .schedule-state.adjusted::after {
     content: "調整中";
     border: 3px solid #D97706;
-    background-color: #D9770660;
+    background-color: #D97706a0;
 }
 .schedule-state.applying::after {
     content: "受付中";
     border: 3px solid #15803D;
-    background-color: #15803D60;
+    background-color: #15803Da0;
 }
 .schedule-state.applied::after {
     content: "受付終了";
     border: 3px solid #B91C1C;
-    background-color: #B91C1C60;
+    background-color: #B91C1Ca0;
 }
 .schedule-state.finished::after {
     content: "上映済み";
     border: 3px solid #64748B;
-    background-color: #64748B60;
+    background-color: #64748Ba0;
 }
 .schedule-state.suspension::after {
     content: "中止";
     border: 3px solid #991B1B;
-    background-color: #991B1B60;
+    background-color: #991B1Ba0;
+}
+
+@media (max-width: 767px) {
+    .schedule-content {
+        margin-top: 20px;
+    }
+
+    .schedule-table {
+        line-height: 30px;
+        border-spacing: 20px 0;
+    }
+
+    .schedule-content th {
+        white-space: nowrap;
+    }
+
+    .schedule-state::after {
+        width: 60px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
 }
 
 /* footer */
@@ -321,6 +419,12 @@ h3 {
     background-color: #00000070;
     border-radius: 10px;
     font-size: 12px;
+}
+
+@media (max-width: 767px) {
+    .footer-nav-list {
+        padding: 30px 5%;
+    }
 }
 
 .footer-nav-link {
