@@ -19,11 +19,19 @@
 
 body {
     color: #fff;
-    background-image: url(../images/main-bg.jpg);
-    background-attachment: fixed;
+    background-color: #080D18;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../images/main-bg.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* header */
@@ -145,57 +153,6 @@ body {
     justify-content: right;
 }
 
-@media (max-width: 767px) {
-    .header {
-        display: flex;
-        padding: 20px 5% 10px 5%;
-    }
-
-    .header-logo {
-        width: 50%;
-        object-fit: cover;
-    }
-
-    .header-content {
-        display: block;
-    }
-
-    .header-ttl {
-        font-size: 20px;
-        padding-top: 10px;
-    }
-
-    .header-ttl::before {
-        font-size: 12px;
-        bottom: 90%;
-    }
-
-    .header-nav {
-        width: 50%;
-    }
-
-    .header-nav-list {
-        display: block;
-        padding: 10px 5%;
-        border-radius: 10px;
-    }
-
-    .header-nav-link:hover::after {
-        width: 100%;
-    }
-
-    .header-nav-item {
-        width: 80%;
-        margin: 5px 0;
-        left: 50%;
-        justify-content: center;
-    }
-
-    .icon-list {
-        display: flex;
-    }
-}
-
 
 /* main */
 section + section {
@@ -257,6 +214,10 @@ h3 {
     content: "──上映スケジュール──";
 }
 
+.section-ttl.__admin::before {
+    content: "──管理画面──";
+}
+
 .btn {
     display: block;
     border: 1px solid #CCC;
@@ -267,26 +228,7 @@ h3 {
     margin: 5px 0;
 }
 
-@media (max-width: 767px) {
-    section + section {
-        margin-top: 20px;
-    }
 
-    h2 {
-        font-weight: 750;
-        font-size: 30px;
-    }
-
-    h3 {
-        font-weight: 600;
-        font-size: 25px;
-    }
-
-    .section-ttl::before {
-        font-size: 18px;
-        bottom: 75%;
-    }
-}
 
 /* info */
 .info-list {
@@ -330,6 +272,9 @@ h3 {
 
 .schedule-content {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .schedule-table {
@@ -377,26 +322,6 @@ h3 {
     background-color: #991B1Ba0;
 }
 
-@media (max-width: 767px) {
-    .schedule-content {
-        margin-top: 20px;
-    }
-
-    .schedule-table {
-        line-height: 30px;
-        border-spacing: 20px 0;
-    }
-
-    .schedule-content th {
-        white-space: nowrap;
-    }
-
-    .schedule-state::after {
-        width: 60px;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-}
 
 /* footer */
 
@@ -421,11 +346,6 @@ h3 {
     font-size: 12px;
 }
 
-@media (max-width: 767px) {
-    .footer-nav-list {
-        padding: 30px 5%;
-    }
-}
 
 .footer-nav-link {
     color: #fff;
@@ -465,3 +385,103 @@ h3 {
     text-align: center;
 }
 
+
+
+@media (max-width: 768px) {
+
+    /* header */
+    .header {
+        display: flex;
+        padding: 20px 5% 10px 5%;
+    }
+
+    .header-logo {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .header-content {
+        display: block;
+    }
+
+    .header-ttl {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+
+    .header-ttl::before {
+        font-size: 12px;
+        bottom: 90%;
+    }
+
+    .header-nav {
+        width: 50%;
+    }
+
+    .header-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5%;
+        border-radius: 10px;
+    }
+
+    .header-nav-link:hover::after {
+        width: 100%;
+    }
+
+    .header-nav-item {
+        width: 80%;
+        margin: 5px 0;
+        justify-content: center;
+    }
+
+    .icon-list {
+        display: flex;
+    }
+
+    /* main */
+    section + section {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-weight: 750;
+        font-size: 30px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .section-ttl::before {
+        font-size: 18px;
+        bottom: 75%;
+    }
+
+    /* schedule */
+    .schedule-content {
+        margin-top: 20px;
+    }
+
+    .schedule-table {
+        line-height: 30px;
+        border-spacing: 12px 0;
+    }
+
+    .schedule-content th {
+        white-space: nowrap;
+    }
+
+    .schedule-state::after {
+        width: 60px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* footer */
+    .footer-nav-list {
+        padding: 30px 5%;
+    }
+}
