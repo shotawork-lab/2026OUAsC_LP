@@ -1,0 +1,487 @@
+:root {
+    /* ブランド */
+    --color-primary: #1D4ED8;
+    --color-accent: #38BDF8;
+
+    /* 基本色 */
+    --color-bg: #080D18;
+    --color-surface: #111B2B;
+    --color-text: #F8FAFC;
+    --color-muted: #94A3B8;
+    --color-border: #334155;
+
+    /* 状態 */
+    --color-success: #15803D;
+    --color-warning: #D97706;
+    --color-error: #B91C1C;
+    --color-neutral: #64748B;
+}
+
+body {
+    color: #fff;
+    background-color: #080D18;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../images/main-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* header */
+
+.header {
+    position: relative;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 30px 10% 10px 10%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+
+    animation: background-change 18s infinite;
+}
+
+.header > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes background-change {
+
+    0% {
+        background-image: url("../images/header-kv-1.jpg");
+    }
+
+    33% {
+        background-image: url("../images/header-kv-2.jpg");
+    }
+
+    66% {
+        background-image: url("../images/header-kv-3.jpg");
+    }
+
+    100% {
+        background-image: url("../images/header-kv-1.jpg");
+    }
+}
+
+.header-logo {
+    width: 30%;
+    object-fit: cover;
+}
+
+.header-content {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.header-ttl {
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.header-ttl::before {
+    content: "大阪大学天文同好会";
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    bottom: 100%;
+}
+
+.header-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 20px 5%;
+    margin-top: 10px;
+    background-color: #00000070;
+    border-radius: 10px;
+}
+
+.header-nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.current {
+    color: skyblue;
+}
+
+.header-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+.header-nav-link:hover::after {
+    width: 100%;
+}
+
+.header-nav-item {
+    width: 20%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #00000090;
+}
+
+.icon {
+    display: block;
+    justify-content: right;
+}
+
+
+/* main */
+section + section {
+    margin-top: 40px;
+}
+
+.main {
+    margin: 20px 5%;
+    padding: 30px 5%;
+    background-color: #00000080;
+}
+
+.update {
+    text-align: center;
+    color: #FFFF00;
+    border: 1px solid #FFFF00;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 1000;
+    position: relative;
+    font-size: 50px;
+    font-style: normal;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.section-ttl::before {
+    content: "";
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 90%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.section-ttl.__home::before {
+    content: "──ご案内──";
+}
+
+.section-ttl.__info::before {
+    content: "──お知らせ──";
+}
+
+.section-ttl.__about::before {
+    content: "──プラネタリウムについて──";
+}
+
+.section-ttl.__schedule::before {
+    content: "──上映スケジュール──";
+}
+
+.section-ttl.__admin::before {
+    content: "──管理画面──";
+}
+
+.btn {
+    display: block;
+    border: 1px solid #CCC;
+    width: 160px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px 0;
+}
+
+
+
+/* info */
+.info-list {
+    margin-top: 20px;
+}
+
+.info-item {
+    border-bottom: 1px solid #BCBCBC;
+}
+
+.info-item + .info-item {
+    margin-top: 40px;
+}
+
+.info-tag {
+    font-size: 12px;
+    margin-left: 24px;
+    padding: 4px 8px;
+}
+
+.info-tag.__orange {
+    border: 1px solid #FF9F51;
+    color: #FF9F51;
+}
+
+.info-tag.__red {
+    border: 1px solid #BA0000;
+    color: #BA0000;
+}
+
+.info-txt {
+    margin: 16px 0;
+}
+
+.info-detail {
+    padding-left: 20px;
+}
+
+
+/* schedule */
+
+.schedule-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.schedule-table {
+    line-height: 40px;
+    border-spacing: 20px 0;
+}
+
+.schedule-row {
+    text-align: center;
+}
+
+.schedule-state::after {
+    content: "";
+    display: inline-block;
+    width: 90px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.schedule-state.adjusted::after {
+    content: "調整中";
+    border: 3px solid #D97706;
+    background-color: #D97706a0;
+}
+.schedule-state.applying::after {
+    content: "受付中";
+    border: 3px solid #15803D;
+    background-color: #15803Da0;
+}
+.schedule-state.applied::after {
+    content: "受付終了";
+    border: 3px solid #B91C1C;
+    background-color: #B91C1Ca0;
+}
+.schedule-state.finished::after {
+    content: "上映済み";
+    border: 3px solid #64748B;
+    background-color: #64748Ba0;
+}
+.schedule-state.suspension::after {
+    content: "中止";
+    border: 3px solid #991B1B;
+    background-color: #991B1Ba0;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #000;
+    justify-content: center;
+}
+
+.footer-logo {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.footer-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    padding: 30px 20%;
+    margin-top: 10px;
+    background-color: #00000070;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+
+.footer-nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.current {
+    color: skyblue;
+}
+
+.footer-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+.footer-nav-link:hover::after {
+    width: 100%;
+}
+
+.footer-nav-item {
+    width: 20%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #00000090;
+}
+
+.footer-copy {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* header */
+    .header {
+        display: flex;
+        padding: 20px 5% 10px 5%;
+    }
+
+    .header-logo {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .header-content {
+        display: block;
+    }
+
+    .header-ttl {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+
+    .header-ttl::before {
+        font-size: 12px;
+        bottom: 90%;
+    }
+
+    .header-nav {
+        width: 50%;
+    }
+
+    .header-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5%;
+        border-radius: 10px;
+    }
+
+    .header-nav-link:hover::after {
+        width: 100%;
+    }
+
+    .header-nav-item {
+        width: 80%;
+        margin: 5px 0;
+        justify-content: center;
+    }
+
+    .icon-list {
+        display: flex;
+    }
+
+    /* main */
+    section + section {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-weight: 750;
+        font-size: 30px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .section-ttl::before {
+        font-size: 18px;
+        bottom: 75%;
+    }
+
+    /* schedule */
+    .schedule-content {
+        margin-top: 20px;
+    }
+
+    .schedule-table {
+        line-height: 30px;
+        border-spacing: 12px 0;
+    }
+
+    .schedule-content th {
+        white-space: nowrap;
+    }
+
+    .schedule-state::after {
+        width: 60px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* footer */
+    .footer-nav-list {
+        padding: 30px 5%;
+    }
+}

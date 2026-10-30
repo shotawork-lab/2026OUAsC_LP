@@ -60,7 +60,7 @@
 
     <main class="main">
         <section class="">
-            <h2 class="section-ttl __schedule">SCHEDULE</h2>
+            <!-- <h2 class="section-ttl __schedule">SCHEDULE</h2>
             <p>※これは10.14 14:38現在の情報です。(仮入力中)</p>
             <div class="schedule-content">
                 <h3>１日目 (11/01)</h3>
@@ -131,8 +131,20 @@
                         <td class="schedule-state adjusted"></td>
                     </tr>
                 </table>
+            </div> -->
+
+            <h2 class="section-ttl __schedule">SCHEDULE</h2>
+
+            <p id="schedule-updated">
+                最新の日程情報を取得しています。
+            </p>
+
+            <div id="schedule-container" class="schedule-content">
+                <!-- JavaScriptがここに日程表を生成する -->
             </div>
         </section>
+
+        <a href="./admin.html">管理画面はこちら</a>
 
     </main>
 
@@ -163,6 +175,8 @@
         </p>
         
     </footer>
+
+    <script type="module" src="./js/schedule.js"></script>
 </body>
 
 </html>

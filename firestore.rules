@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /sessions/{sessionId} {
+      // 日程情報は誰でも閲覧できる
+      allow read: if true;
+
+      // 指定した管理者だけが日程情報を変更できる
+      allow write: if request.auth != null
+        && request.auth.token.email == "oze120shota@gmail.com";
+    }
+  }
+}
