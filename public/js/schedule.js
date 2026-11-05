@@ -87,7 +87,7 @@ function renderSchedule(sessions) {
             const headerRow = document.createElement("tr");
             headerRow.classList.add("schedule-row");
 
-            const headers = ["項目", "上映開始", "受付開始", ""];
+            const headers = ["項目", "上映開始", "整理券配布開始", ""];
 
             headers.forEach((text, index) => {
                 const cell = document.createElement(

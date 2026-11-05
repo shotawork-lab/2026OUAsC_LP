@@ -6,7 +6,8 @@ import {
     getDocs,
     doc,
     getDoc,
-    setDoc
+    setDoc,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 import {
     getAuth,
@@ -73,7 +74,7 @@ loginForm.addEventListener("submit", async (event) => {
 
 const states = [
     { value: "adjusted", label: "調整中" },
-    { value: "applying", label: "受付中" },
+    { value: "applying", label: "整理券配布中" },
     { value: "applied", label: "受付終了" },
     { value: "finished", label: "上映済み" },
     { value: "suspension", label: "中止" }
@@ -136,7 +137,14 @@ document.getElementById("submit-btn").addEventListener("click", async function()
             console.log("保存成功:", sessionId);
         }
 
-        alert("全日程の保存が完了しました。");
+        // 最終更新時刻を記録する
+        const metadataRef = doc(db, "metadata", "schedule");
+
+        await setDoc(metadataRef, {
+            updatedAt: serverTimestamp()
+        });
+
+        console.log("更新時刻を保存しました。");
 
     } catch (error) {
         console.error("日程情報の保存に失敗しました。", error);
